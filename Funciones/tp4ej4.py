@@ -1,28 +1,30 @@
 ################
-# Fede Trujillo - @FNT-138
+# Fede Trujillo - @FNT138
 # Plantilla de ejercicio
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from tp4ej1 import IngresoIncorrecto
+from tp4ej1 import IngresoIncorrecto, ingreso_entero
 
-def compara(numero):
-    try:
-        numero = (int(input("Ingrese Un Numero Para Comparar: #")))
-        otro_numero = (int(input("Ingrese Otro Numero Para Comparar: #")))
-    except ValueError as err:
-        raise IngresoIncorrecto ("Valor no Permitido")
-    
+def compara(numero, otro_numero):
+    """
+    La Funcion Compara Dos Valores Dados Por el Usuario,
+    Devolviendo -1 Si El Primer Valor Es Menor Que El Segundo,
+    1 Si EL Primer Valor Es Mayor Que El Segundo,
+    y 0 Si Ambos Valores Son Iguales
+    """        
     if numero < otro_numero:
         return -1
     if numero > otro_numero:
         return 1
     if numero == otro_numero:
         return 0
-
-
-
+    
 def prueba():
-    comparar = compara(1)
+    numero = ingreso_entero("Ingrese un numero: ")
+    otro_numero = ingreso_entero("Ingrese otro numero: ")    
+    comparar = compara(numero, otro_numero)
+    
     print (comparar)
+    
 if __name__ == "__main__":
     prueba()
