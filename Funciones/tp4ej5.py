@@ -1,27 +1,27 @@
 ################
-# Fede Trujillo - @FNT-138
+# Fede Trujillo - @FNT138
 # Plantilla de ejercicio
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from tp4ej1 import IngresoIncorrecto
+from tp4ej1 import IngresoIncorrecto, ingreso_entero
+
 def signo(numero):
-    try:
-        numero = (int(input("Ingrese Un Numero Para Saber Si Es"
-                                        "Positivo, Negativo o Cero: #")))
-    except ValueError as err:
-        raise IngresoIncorrecto ("Valor invalido")
-    
+    """
+    La Funcion signo Devuelve El Signo Del Numero Ingresado,
+    Siendo 1 si es positivo, -1 si es negativo y 0 si es igual a cero
+    """
     if numero == 0:
-        return(f"El numero {numero} Es 0")
+        return 0
     if numero > 0:
-        return(f"El Numero {numero} Es Positivo")
+        return 1
     if numero < 0:
-        return(f"El Numero {numero} Es Negativo")
-
-
-
+        return -1
+    
 def prueba():
-    print(signo("Ingrese Un Numero Para Saber Si es Positivo, Negativo o Cero"))
+    numero = ingreso_entero("Ingrese un numero: ")    
+    func = signo(numero)
+    
+    print(func)    
     
 if __name__ == "__main__":
     prueba()
