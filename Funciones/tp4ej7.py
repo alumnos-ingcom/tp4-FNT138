@@ -5,15 +5,22 @@
 ################
 from tp4ej1 import ingreso_entero
 
-def cociente_calc(num1, num2):
+def division_lenta(dividendo, divisor):
+
     """
     La funcion Calcula El cociente de dos numero mediante restas sucesivas
     """
+    num1 = dividendo
+    num2 = divisor
     cociente = 0
+    resto = 0
+    
     while num1 >= num2:
         num1 = num1 - num2
         cociente = cociente +1
+        resto = num1
     return cociente
+
     
 def resto_calc(num1, num2):
     """
@@ -28,8 +35,8 @@ def resto_calc(num1, num2):
 def prueba():
     num1 = ingreso_entero("Ingrese un numero:")
     num2 = ingreso_entero("Ingrese otro numero:")    
-    cocient_ = cociente_calc(num1, num2)
-    rest_ = resto_calc(num1, num2)
+    cocient_ = division_lenta(num1, num2)
+    rest_ =  resto_calc(num1, num2)
     
     print(f"El cociente de {num1} y {num2} es {cocient_}")
     print(f"El resto de {num1} y {num2} es {rest_}")
