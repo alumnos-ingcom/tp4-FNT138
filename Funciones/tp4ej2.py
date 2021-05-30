@@ -19,12 +19,19 @@ def suma_lenta(numero, otro_numero):
         while num2 > 0:
             suma = suma+"+1"
              num2 = num2 - 1
+    suma = ""
+        
+    if otro_numero > 0:
+        while otro_numero > 0:
+            suma = suma+"+1"
+            otro_numero = otro_numero-1
         return suma
     
     else:
         while num2 < 0:
             suma = suma+"-1"
             num2 = num2 + 1
+            otro_numero = otro_numero +1
         return suma   
 
 def prueba():
