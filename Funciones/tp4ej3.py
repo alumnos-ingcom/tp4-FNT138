@@ -6,38 +6,38 @@
 from tp4ej1 import IngresoIncorrecto
 
 def convertir_a_fahrrenheit(centigrados):
-        """
+    """
         Convierte Grados Centigrados a Fahrenheit mediante la formula
         (C°*9/5) + 32 = F°
-                                                """
-        try:
-            centigrados = float(input("Dame Tus Grados en °C: "))
-            fahrenheit = (centigrados * 9/5) + 32
-        except ValueError as err:
-            raise IngresoIncorrecto ("Valor Invalido") from err
-        return(f"Tus {centigrados}°C Equivalen a {fahrenheit} °F")
-        
-    
-    
+    """
+    try:
+        centigrados = float(centigrados)
+        centigrados = (centigrados * 9/5) + 32
+    except ValueError as err:
+        raise IngresoIncorrecto ("Valor Invalido") from err
+    return centigrados
+
 def convertir_a_centigrados(fahrenheit):
     """
         La funcion Transforma los grados Fahrenheit ingresados por consola
         a centigrador mediante la formula (°F-32)*5/9 = °C
-                                                                                        """
+    """
     try:
-        fahrenheit = float(input("Dame Tus Grados en °F : "))
-        centigrados = (fahrenheit - 32)*5/9
+        fahrenheit = float(fahrenheit)
+        fahrenheit = (fahrenheit - 32)*5/9
     except ValueError as err:
         raise IngresoIncorrecto ("Valor Invalido") from err
-    return (f"Tus {fahrenheit}°F Equivalen a {centigrados} °C")
+    return fahrenheit
     
-
 def prueba():
-    C = convertir_a_centigrados(0)
-    F = convertir_a_fahrrenheit(0)
-    print(C)
-    print(F)
+    fahrenheit = input("Ingrese Sus °F: ")
+    centigrados = input("Ingrese Sus °C: ")
     
-
+    C = convertir_a_centigrados(fahrenheit)
+    F = convertir_a_fahrrenheit(centigrados)
+    
+    print(f"tus {fahrenheit}°F equivalen a {C} °C")
+    print(f"tus {centigrados}°C equivalen a {F} °F")
+    
 if __name__ == "__main__":
     prueba()
